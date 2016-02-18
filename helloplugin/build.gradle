@@ -16,7 +16,7 @@ uploadArchives {
 //            repository(url: "http://localhost:8081/nexus/content/repositories/snapshots") {
 //                authentication(userName: "admin", password: "admin")
 //            }
-                pom.version = "1.0.5"
+                pom.version = "1.0.8"
                 pom.artifactId = "helloplugin"
                 pom.groupId = "net.masonliu"
             }
