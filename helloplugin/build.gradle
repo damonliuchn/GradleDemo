@@ -1,0 +1,25 @@
+apply plugin: 'groovy'
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///Users/liumeng/Documents/Backup/maven") {
+//            repository(url: "http://localhost:8081/nexus/content/repositories/snapshots") {
+//                authentication(userName: "admin", password: "admin")
+//            }
+                pom.version = "1.0.5"
+                pom.artifactId = "helloplugin"
+                pom.groupId = "net.masonliu"
+            }
+        }
+    }
+}
