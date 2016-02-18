@@ -6,7 +6,7 @@ dependencies {
 
 
 
-apply plugin: 'java'
+//apply plugin: 'java'
 apply plugin: 'maven'
 
 uploadArchives {
@@ -16,7 +16,7 @@ uploadArchives {
 //            repository(url: "http://localhost:8081/nexus/content/repositories/snapshots") {
 //                authentication(userName: "admin", password: "admin")
 //            }
-                pom.version = "1.0.8"
+                pom.version = "1.0.9"
                 pom.artifactId = "helloplugin"
                 pom.groupId = "net.masonliu"
             }

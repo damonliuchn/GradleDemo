@@ -1,4 +1,15 @@
 apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        maven {
+            url "file:///Users/liumeng/Documents/Backup/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.masonliu:helloplugin:1.0.9'
+    }
+}
 apply plugin: 'helloplugin'
 
 android {
@@ -35,13 +46,49 @@ android {
 //    }
 }
 
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
+
+//    compile files('libs/something_local.jar')
+
+//    compile 'com.github.asne:asne-vk:0.2.1@aar'
+
+//    compile project(':retrofit')
+//
+//    compile ('com.squareup.retrofit2:converter-gson:2.0.0-beta3') {
+//        exclude module: 'retrofit'
+//    }
+
+    //excluding a particular transitive dependency:
+
+//    exclude module: 'cglib' //by artifact name
+//
+//    exclude group: 'org.jmock' //by group
+//
+//    exclude group: 'org.unwanted', module: 'iAmBuggy' //by both name and group
+
+//    compile ('com.somepackage:LIBRARY_NAME:1.0.0@aar'){
+//        transitive=true
+//    }
+//    http://stackoverflow.com/questions/22795455/transitive-dependencies-not-resolved-for-aar-library-using-gradle
+
+//    https://docs.gradle.org/current/userguide/dependency_management.html
+
+//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1' // or 1.4-beta1
+//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1' // or 1.4-beta1
+//    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1' // or 1.4-beta1
+//    https://github.com/square/leakcanary
 }
 
-sayHello{
+sayHello {
     message "liumeng111111"
 }
 
